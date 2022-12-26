@@ -35,12 +35,6 @@ public class EtelForm
     public void init(){
         priceSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1000,2000,3000, 5));
     }
-
-    private void readFood() throws SQLException {
-        List<Etel> foodList = dB.readMeals();
-        Menu.getItems().clear();
-        Menu.getItems().addAll(foodList);
-    }
     @FXML
     public void addClick(ActionEvent actionEvent) {
         String nev = nameField.getText().trim();
