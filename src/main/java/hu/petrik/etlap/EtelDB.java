@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EtelDB {
-    private Connection connection;
+    private final Connection connection;
     public static String DB_DRIVER = "mysql";
     public static String DB_HOST = "localhost";
     public static String DB_PORT = "3306";
@@ -28,7 +28,7 @@ public class EtelDB {
 
         return prepStatement.executeUpdate() > 0;
     }
-    public List<Etel> readMeals() throws SQLException {
+    public List<Etel> readFood() throws SQLException {
         List<Etel> mealsList = new ArrayList<>();
         String sql = "SELECT * FROM etlap";
         Statement statement = connection.createStatement();
@@ -46,7 +46,7 @@ public class EtelDB {
         }
         return mealsList;
     }
-    public boolean updateFood(Etel etel) throws SQLException {
+   /* public boolean updateFood(Etel etel) throws SQLException {
         String sql = "UPDATE etlap SET nev = ?, leiras = ?, ar= ?, kategoria= ? WHERE id = ?";
         PreparedStatement prepStatement = connection.prepareStatement(sql);
         prepStatement.setString(1, etel.getNev());
@@ -56,7 +56,7 @@ public class EtelDB {
         prepStatement.setInt(5, etel.getId());
 
         return prepStatement.executeUpdate() > 0;
-    }
+    }*/
     public boolean deleteFood(int id) throws SQLException {
         String sql = "DELETE FROM etlap WHERE id = ?";
         PreparedStatement prepStatement = connection.prepareStatement(sql);

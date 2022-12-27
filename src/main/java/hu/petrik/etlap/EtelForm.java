@@ -8,7 +8,6 @@ import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.sql.SQLException;
-import java.util.List;
 import java.util.Optional;
 
 public class EtelForm
@@ -29,14 +28,11 @@ public class EtelForm
     private MenuItem mainMenuItem;
     @FXML
     private MenuItem dessertMenuItem;
-    private TableView<Etel> Menu;
-    private EtelDB dB;
-
-    public void init(){
+    public void initialize(){
         priceSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1000,2000,3000, 5));
     }
     @FXML
-    public void addClick(ActionEvent actionEvent) {
+    public void addBtnClick(ActionEvent actionEvent) {
         String nev = nameField.getText().trim();
         String leiras = descField.getText().trim();
         int ar = priceSpinner.getValue();
