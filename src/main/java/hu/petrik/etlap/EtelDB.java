@@ -46,17 +46,6 @@ public class EtelDB {
         }
         return mealsList;
     }
-   /* public boolean updateFood(Etel etel) throws SQLException {
-        String sql = "UPDATE etlap SET nev = ?, leiras = ?, ar= ?, kategoria= ? WHERE id = ?";
-        PreparedStatement prepStatement = connection.prepareStatement(sql);
-        prepStatement.setString(1, etel.getNev());
-        prepStatement.setString(2, etel.getLeiras());
-        prepStatement.setInt(3, etel.getAr());
-        prepStatement.setString(4, etel.getKategoria());
-        prepStatement.setInt(5, etel.getId());
-
-        return prepStatement.executeUpdate() > 0;
-    }*/
     public boolean deleteFood(int id) throws SQLException {
         String sql = "DELETE FROM etlap WHERE id = ?";
         PreparedStatement prepStatement = connection.prepareStatement(sql);
